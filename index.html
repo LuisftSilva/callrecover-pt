@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recupera chamadas perdidas → marcações</title>
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b0b0f;color:#f4f4f7;margin:0}
+    .wrap{max-width:900px;margin:0 auto;padding:48px 20px}
+    .card{background:#14141b;border:1px solid #22232c;border-radius:14px;padding:28px;margin:18px 0}
+    h1{font-size:36px;line-height:1.1;margin:0 0 12px}
+    h2{font-size:22px;margin:0 0 12px}
+    p{color:#c7c8d1;line-height:1.6}
+    .cta{display:inline-block;background:#ffcc00;color:#0b0b0f;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+    .price{font-size:28px;font-weight:700}
+    .muted{font-size:13px;color:#9da0ab}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Recupera chamadas perdidas e transforma‑as em marcações.</h1>
+    <p>Montamos um follow‑up simples (com opt‑in) e uma página de marcação para não perderes contactos. KPI único: <b>marcações recuperadas/semana</b>.</p>
+    <a class="cta" href="#contacto">Quero ver um exemplo</a>
+
+    <div class="card">
+      <h2>Como funciona</h2>
+      <div class="grid">
+        <div>
+          <p><b>1) Opt‑in + follow‑up</b><br/>Mensagem curta (SMS/WhatsApp com consentimento) para recuperar chamadas perdidas.</p>
+        </div>
+        <div>
+          <p><b>2) Link de marcação</b><br/>Página simples para o cliente marcar sem fricção.</p>
+        </div>
+        <div>
+          <p><b>3) Medição</b><br/>Contamos marcações recuperadas por semana.</p>
+        </div>
+        <div>
+          <p><b>4) Ajustes</b><br/>Melhoramos script e timings.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Preço</h2>
+      <p class="price">Setup €150–€300</p>
+      <p class="price">Mensal €79–€149</p>
+      <p class="muted">*Preço final depende do volume de chamadas e integração.</p>
+    </div>
+
+    <div class="card" id="contacto">
+      <h2>Contacta‑nos</h2>
+      <p>Envia o teu nome + tipo de negócio e enviamos um exemplo.</p>
+      <form action="https://formsubmit.co/callrecovernqw2@dollicons.com" method="POST" style="display:flex;flex-direction:column;gap:12px;max-width:400px">
+        <input type="hidden" name="_subject" value="Novo contacto — CallRecover">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://callrecover-pt.github.io/?obrigado=1">
+        <input type="text" name="name" placeholder="Nome" required style="padding:10px;border-radius:8px;border:1px solid #22232c;background:#0b0b0f;color:#f4f4f7">
+        <input type="email" name="email" placeholder="Email" required style="padding:10px;border-radius:8px;border:1px solid #22232c;background:#0b0b0f;color:#f4f4f7">
+        <input type="text" name="business" placeholder="Tipo de negócio" required style="padding:10px;border-radius:8px;border:1px solid #22232c;background:#0b0b0f;color:#f4f4f7">
+        <button type="submit" class="cta" style="border:none;cursor:pointer;text-align:center">Enviar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
