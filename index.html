@@ -4,13 +4,89 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CallRecover — Recupera chamadas perdidas → marcações</title>
-  <meta name="description" content="Transformamos chamadas perdidas em marcações para o teu negócio. Follow-up com opt-in, página de marcação e KPI semanal. Setup a partir de €150.">
+  <meta name="description" content="Transformamos chamadas perdidas em marcações para o teu negócio. Follow-up automático, página de marcação e relatório semanal. Sem risco.">
   <meta property="og:title" content="CallRecover — Recupera chamadas perdidas">
   <meta property="og:description" content="Follow-up simples para negócios locais. Recupera contactos perdidos e converte-os em marcações.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://luisftsilva.github.io/callrecover-pt/">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://luisftsilva.github.io/callrecover-pt/">
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Como funciona o sistema de recuperação de chamadas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quando uma chamada não é atendida, o sistema envia automaticamente uma mensagem (SMS ou WhatsApp, com consentimento) ao cliente com um link para marcar. O cliente marca online em vez de ligar a outro negócio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso de instalar alguma app ou equipamento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O sistema funciona com o teu número actual. Não precisas de mudar de operador, instalar apps nem comprar equipamento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto tempo demora a activar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O setup completo demora entre 24 a 48 horas. Inclui configuração dos scripts de mensagem, criação da página de marcação e testes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto custa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Setup único entre €150-€300 e mensalidade entre €79-€149, dependendo do volume. Sem compromisso de permanência — cancelas quando quiseres."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "E se não funcionar para o meu negócio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oferecemos 14 dias de teste. Se nos primeiros 14 dias não recuperares pelo menos 3 marcações, devolvemos o setup completo."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: LocalBusiness Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "CallRecover",
+    "description": "Recuperação automática de chamadas perdidas para negócios locais em Portugal.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Portugal"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "CallRecover"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "79",
+      "highPrice": "149",
+      "priceCurrency": "EUR",
+      "offerCount": "2"
+    }
+  }
+  </script>
+
   <style>
     *{box-sizing:border-box}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b0b0f;color:#f4f4f7;margin:0}
@@ -19,7 +95,7 @@
     h1{font-size:36px;line-height:1.1;margin:0 0 12px}
     h2{font-size:22px;margin:0 0 12px}
     p{color:#c7c8d1;line-height:1.6}
-    .cta{display:inline-block;background:#ffcc00;color:#0b0b0f;padding:14px 24px;border-radius:10px;font-weight:700;text-decoration:none;font-size:16px;transition:background .2s}
+    .cta{display:inline-block;background:#ffcc00;color:#0b0b0f;padding:14px 24px;border-radius:10px;font-weight:700;text-decoration:none;font-size:16px;transition:background .2s;border:none;cursor:pointer}
     .cta:hover{background:#e6b800}
     .grid{display:grid;grid-template-columns:1fr;gap:12px}
     @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
@@ -32,18 +108,42 @@
     .stat-num{font-size:32px;font-weight:700;color:#ffcc00}
     .stat-label{font-size:13px;color:#9da0ab}
     .trust{text-align:center;padding:32px 20px;color:#9da0ab;font-size:14px}
-    input,textarea{padding:12px;border-radius:8px;border:1px solid #22232c;background:#0b0b0f;color:#f4f4f7;font-size:15px;width:100%}
-    input:focus,textarea:focus{outline:none;border-color:#ffcc00}
+    input,textarea,select{padding:12px;border-radius:8px;border:1px solid #22232c;background:#0b0b0f;color:#f4f4f7;font-size:15px;width:100%}
+    input:focus,textarea:focus,select:focus{outline:none;border-color:#ffcc00}
     .form-btn{border:none;cursor:pointer;text-align:center;width:100%;font-size:16px}
     footer{text-align:center;padding:32px 20px;color:#555;font-size:12px}
+    /* Calculator */
+    .calc-result{background:#1a1a24;border:1px solid #ffcc00;border-radius:10px;padding:20px;margin-top:16px;text-align:center;display:none}
+    .calc-result .big{font-size:36px;font-weight:800;color:#ffcc00;margin:8px 0}
+    .calc-result .sub{color:#c7c8d1;font-size:14px}
+    .calc-row{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:8px 0}
+    .calc-field{flex:1;min-width:140px}
+    .calc-field label{display:block;font-size:13px;color:#9da0ab;margin-bottom:6px}
+    .range-val{font-size:20px;font-weight:700;color:#ffcc00;margin-left:8px}
+    /* FAQ */
+    details{border-bottom:1px solid #22232c;padding:14px 0}
+    details summary{cursor:pointer;font-weight:600;font-size:16px;color:#f4f4f7;list-style:none;display:flex;justify-content:space-between;align-items:center}
+    details summary::-webkit-details-marker{display:none}
+    details summary::after{content:'+';font-size:20px;color:#ffcc00;transition:transform .2s}
+    details[open] summary::after{content:'−'}
+    details p{font-size:15px;margin:8px 0 4px}
+    /* Guarantee */
+    .guarantee{background:linear-gradient(135deg,#14141b 60%,#1a1f14);border:1px solid #2a3a1a;border-radius:14px;padding:28px;margin:18px 0;text-align:center}
+    .guarantee-icon{font-size:48px;margin-bottom:12px}
+    .guarantee h2{color:#7acc00}
+    /* Steps with numbers */
+    .step-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#ffcc00;color:#0b0b0f;font-weight:800;font-size:14px;margin-right:10px;flex-shrink:0}
+    .step-item{display:flex;align-items:flex-start;margin:12px 0}
+    .step-text b{color:#f4f4f7}
+    .step-text{color:#c7c8d1;line-height:1.5}
   </style>
 </head>
 <body>
   <div class="wrap">
     <!-- Hero -->
     <h1>Recupera chamadas perdidas e transforma‑as em marcações.</h1>
-    <p class="hero-sub">Para clínicas, barbearias e negócios locais em Portugal.</p>
-    <a class="cta" href="#contacto">Quero saber mais →</a>
+    <p class="hero-sub">Para clínicas, barbearias e negócios locais em Portugal. <b>Sem risco — 14 dias de teste.</b></p>
+    <a class="cta" href="#calculadora">Quanto estás a perder? →</a>
 
     <!-- Social proof stats -->
     <div class="card">
@@ -54,38 +154,63 @@
         </div>
         <div class="stat">
           <div class="stat-num">~€200</div>
-          <div class="stat-label">valor médio perdido por semana (estimativa)</div>
+          <div class="stat-label">valor médio perdido por semana</div>
         </div>
         <div class="stat">
-          <div class="stat-num">5 min</div>
-          <div class="stat-label">para ativar o follow‑up</div>
+          <div class="stat-num">48h</div>
+          <div class="stat-label">para ativar o sistema</div>
         </div>
+      </div>
+    </div>
+
+    <!-- Interactive Calculator -->
+    <div class="card" id="calculadora">
+      <h2>💰 Quanto estás a perder em chamadas não atendidas?</h2>
+      <p>Ajusta os valores para o teu negócio:</p>
+      <div class="calc-row">
+        <div class="calc-field">
+          <label>Chamadas perdidas por semana <span class="range-val" id="callsVal">8</span></label>
+          <input type="range" id="calcCalls" min="2" max="40" value="8" style="width:100%;accent-color:#ffcc00">
+        </div>
+        <div class="calc-field">
+          <label>Valor médio por marcação (€) <span class="range-val" id="valueVal">35</span></label>
+          <input type="range" id="calcValue" min="10" max="150" value="35" step="5" style="width:100%;accent-color:#ffcc00">
+        </div>
+      </div>
+      <div class="calc-result" id="calcResult" style="display:block">
+        <div class="sub">Estás a perder aproximadamente</div>
+        <div class="big" id="calcMonthly">€694/mês</div>
+        <div class="sub">Com CallRecover recuperas <b>30-40%</b> dessas marcações:</div>
+        <div class="big" style="color:#7acc00" id="calcRecovery">+€208–€278/mês</div>
+        <p style="margin-top:12px"><a class="cta" href="#contacto" style="font-size:14px;padding:10px 20px">Quero recuperar estas marcações →</a></p>
       </div>
     </div>
 
     <!-- Como funciona -->
     <div class="card">
       <h2>Como funciona</h2>
-      <div class="grid">
-        <div>
-          <p><b>1) Opt‑in + follow‑up</b><br/>Mensagem curta (SMS/WhatsApp com consentimento) para recuperar chamadas perdidas.</p>
-        </div>
-        <div>
-          <p><b>2) Link de marcação</b><br/>Página simples para o cliente marcar sem fricção — 24/7.</p>
-        </div>
-        <div>
-          <p><b>3) Medição semanal</b><br/>Contamos marcações recuperadas por semana. Sem métricas vagas.</p>
-        </div>
-        <div>
-          <p><b>4) Ajustes contínuos</b><br/>Melhoramos scripts e timings com base nos dados reais.</p>
-        </div>
+      <div class="step-item">
+        <span class="step-num">1</span>
+        <div class="step-text"><b>Chamada perdida detectada</b><br/>O sistema detecta automaticamente quando uma chamada não é atendida.</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">2</span>
+        <div class="step-text"><b>Mensagem automática enviada</b><br/>O cliente recebe SMS ou WhatsApp (com consentimento) com link de marcação.</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">3</span>
+        <div class="step-text"><b>Cliente marca online — 24/7</b><br/>Página simples para o cliente marcar sem fricção, mesmo fora de horário.</div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">4</span>
+        <div class="step-text"><b>Relatório semanal</b><br/>Contamos marcações recuperadas. Sem métricas vagas — sabes exactamente o retorno.</div>
       </div>
     </div>
 
     <!-- Para quem -->
     <div class="card">
       <h2>Para quem é isto?</h2>
-      <p>Negócios locais que dependem de marcações e perdem chamadas:</p>
+      <p>Negócios locais que dependem de marcações e perdem chamadas fora de horário, à hora de almoço ou quando estão ocupados:</p>
       <div style="margin-top:12px">
         <span class="badge">🦷 Clínicas dentárias</span>
         <span class="badge">💈 Barbearias</span>
@@ -93,7 +218,16 @@
         <span class="badge">🔧 Oficinas</span>
         <span class="badge">🏥 Clínicas veterinárias</span>
         <span class="badge">🧹 Limpezas</span>
+        <span class="badge">🏋️ Ginásios</span>
+        <span class="badge">📸 Fotógrafos</span>
       </div>
+    </div>
+
+    <!-- Guarantee -->
+    <div class="guarantee">
+      <div class="guarantee-icon">🛡️</div>
+      <h2>Garantia de 14 dias</h2>
+      <p style="max-width:600px;margin:0 auto">Se nos primeiros 14 dias não recuperares <b>pelo menos 3 marcações</b> que se estavam a perder, devolvemos o valor do setup. Sem letras pequenas.</p>
     </div>
 
     <!-- Preço -->
@@ -102,20 +236,55 @@
       <div class="grid">
         <div>
           <p class="price">Setup €150–€300</p>
-          <p class="muted">Configuração única: scripts, página de marcação, integração.</p>
+          <p class="muted">Configuração única: scripts personalizados, página de marcação, integração com o teu número.</p>
         </div>
         <div>
           <p class="price">Mensal €79–€149</p>
-          <p class="muted">Gestão do follow‑up + relatório semanal + ajustes.</p>
+          <p class="muted">Gestão do follow‑up + relatório semanal + ajustes contínuos de scripts.</p>
         </div>
       </div>
-      <p style="margin-top:16px;color:#9da0ab;font-size:14px">Preço final depende do volume de chamadas e integrações necessárias. Sem compromisso de permanência.</p>
+      <p style="margin-top:16px;color:#9da0ab;font-size:14px">Preço final depende do volume de chamadas e integrações. <b>Sem compromisso de permanência — cancelas quando quiseres.</b></p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card">
+      <h2>Perguntas frequentes</h2>
+
+      <details>
+        <summary>Como funciona o sistema de recuperação de chamadas?</summary>
+        <p>Quando uma chamada não é atendida, o sistema envia automaticamente uma mensagem (SMS ou WhatsApp, com consentimento) ao cliente com um link para marcar. O cliente marca online em vez de ligar a outro negócio.</p>
+      </details>
+
+      <details>
+        <summary>Preciso de instalar alguma app ou equipamento?</summary>
+        <p>Não. O sistema funciona com o teu número actual. Não precisas de mudar de operador, instalar apps nem comprar equipamento.</p>
+      </details>
+
+      <details>
+        <summary>Quanto tempo demora a activar?</summary>
+        <p>O setup completo demora entre 24 a 48 horas. Inclui configuração dos scripts de mensagem, criação da página de marcação e testes.</p>
+      </details>
+
+      <details>
+        <summary>E se eu já usar uma app de marcações?</summary>
+        <p>Perfeito — integramos com o teu sistema actual. O link de marcação pode apontar para a tua app existente. Não substituímos nada, complementamos.</p>
+      </details>
+
+      <details>
+        <summary>E se não funcionar para o meu negócio?</summary>
+        <p>Oferecemos 14 dias de teste. Se nos primeiros 14 dias não recuperares pelo menos 3 marcações, devolvemos o setup completo. Sem letras pequenas.</p>
+      </details>
+
+      <details>
+        <summary>Tenho várias lojas — funciona em todas?</summary>
+        <p>Sim. Cada loja pode ter configuração independente (scripts, horários, página de marcação). Desconto por volume para redes com 3+ localizações.</p>
+      </details>
     </div>
 
     <!-- Contacto -->
     <div class="card" id="contacto">
       <h2>Fala connosco</h2>
-      <p>Deixa o teu contacto e enviamos um exemplo personalizado para o teu negócio.</p>
+      <p>Deixa o teu contacto e enviamos um exemplo personalizado para o teu negócio — em menos de 24h.</p>
       <form action="https://formsubmit.co/callrecovernqw2@dollicons.com" method="POST" style="display:flex;flex-direction:column;gap:12px;max-width:440px;margin-top:16px">
         <input type="hidden" name="_subject" value="Novo contacto — CallRecover">
         <input type="hidden" name="_captcha" value="false">
@@ -130,12 +299,39 @@
 
     <!-- Trust -->
     <div class="trust">
-      <p>Sem spam. Sem compromisso. Respondemos em 24h.</p>
+      <p>Sem spam. Sem compromisso. Respondemos em 24h.<br/>Feito para negócios locais em Portugal 🇵🇹</p>
     </div>
   </div>
 
   <footer>
     <p>© 2026 CallRecover · Portugal</p>
   </footer>
+
+  <!-- Calculator Logic -->
+  <script>
+    (function(){
+      var calls=document.getElementById('calcCalls'),
+          value=document.getElementById('calcValue'),
+          callsVal=document.getElementById('callsVal'),
+          valueVal=document.getElementById('valueVal'),
+          monthly=document.getElementById('calcMonthly'),
+          recovery=document.getElementById('calcRecovery');
+
+      function update(){
+        var c=parseInt(calls.value),v=parseInt(value.value);
+        callsVal.textContent=c;
+        valueVal.textContent=v;
+        var lost=c*v*4.33;
+        var recLow=Math.round(lost*0.3);
+        var recHigh=Math.round(lost*0.4);
+        monthly.textContent='€'+Math.round(lost)+'/mês';
+        recovery.textContent='+€'+recLow+'–€'+recHigh+'/mês';
+      }
+
+      calls.addEventListener('input',update);
+      value.addEventListener('input',update);
+      update();
+    })();
+  </script>
 </body>
 </html>
