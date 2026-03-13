@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://luisftsilva.github.io/callrecover-pt/sitemap.xml
