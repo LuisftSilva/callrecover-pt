@@ -3,27 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Recupera chamadas perdidas → marcações</title>
+  <title>CallRecover — Recupera chamadas perdidas → marcações</title>
+  <meta name="description" content="Transformamos chamadas perdidas em marcações para o teu negócio. Follow-up com opt-in, página de marcação e KPI semanal. Setup a partir de €150.">
+  <meta property="og:title" content="CallRecover — Recupera chamadas perdidas">
+  <meta property="og:description" content="Follow-up simples para negócios locais. Recupera contactos perdidos e converte-os em marcações.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://luisftsilva.github.io/callrecover-pt/">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://luisftsilva.github.io/callrecover-pt/">
   <style>
+    *{box-sizing:border-box}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b0b0f;color:#f4f4f7;margin:0}
     .wrap{max-width:900px;margin:0 auto;padding:48px 20px}
     .card{background:#14141b;border:1px solid #22232c;border-radius:14px;padding:28px;margin:18px 0}
     h1{font-size:36px;line-height:1.1;margin:0 0 12px}
     h2{font-size:22px;margin:0 0 12px}
     p{color:#c7c8d1;line-height:1.6}
-    .cta{display:inline-block;background:#ffcc00;color:#0b0b0f;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none}
+    .cta{display:inline-block;background:#ffcc00;color:#0b0b0f;padding:14px 24px;border-radius:10px;font-weight:700;text-decoration:none;font-size:16px;transition:background .2s}
+    .cta:hover{background:#e6b800}
     .grid{display:grid;grid-template-columns:1fr;gap:12px}
     @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
     .price{font-size:28px;font-weight:700}
     .muted{font-size:13px;color:#9da0ab}
+    .badge{display:inline-block;background:#1a1a24;border:1px solid #22232c;border-radius:8px;padding:6px 14px;font-size:13px;color:#9da0ab;margin:4px 4px 4px 0}
+    .hero-sub{font-size:18px;color:#9da0ab;margin:8px 0 24px}
+    .stat-row{display:flex;gap:16px;flex-wrap:wrap;margin:16px 0}
+    .stat{text-align:center;flex:1;min-width:120px}
+    .stat-num{font-size:32px;font-weight:700;color:#ffcc00}
+    .stat-label{font-size:13px;color:#9da0ab}
+    .trust{text-align:center;padding:32px 20px;color:#9da0ab;font-size:14px}
+    input,textarea{padding:12px;border-radius:8px;border:1px solid #22232c;background:#0b0b0f;color:#f4f4f7;font-size:15px;width:100%}
+    input:focus,textarea:focus{outline:none;border-color:#ffcc00}
+    .form-btn{border:none;cursor:pointer;text-align:center;width:100%;font-size:16px}
+    footer{text-align:center;padding:32px 20px;color:#555;font-size:12px}
   </style>
 </head>
 <body>
   <div class="wrap">
+    <!-- Hero -->
     <h1>Recupera chamadas perdidas e transforma‑as em marcações.</h1>
-    <p>Montamos um follow‑up simples (com opt‑in) e uma página de marcação para não perderes contactos. KPI único: <b>marcações recuperadas/semana</b>.</p>
-    <a class="cta" href="#contacto">Quero ver um exemplo</a>
+    <p class="hero-sub">Para clínicas, barbearias e negócios locais em Portugal.</p>
+    <a class="cta" href="#contacto">Quero saber mais →</a>
 
+    <!-- Social proof stats -->
+    <div class="card">
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">62%</div>
+          <div class="stat-label">das chamadas perdidas nunca ligam de volta</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">~€200</div>
+          <div class="stat-label">valor médio perdido por semana (estimativa)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5 min</div>
+          <div class="stat-label">para ativar o follow‑up</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Como funciona -->
     <div class="card">
       <h2>Como funciona</h2>
       <div class="grid">
@@ -31,37 +71,71 @@
           <p><b>1) Opt‑in + follow‑up</b><br/>Mensagem curta (SMS/WhatsApp com consentimento) para recuperar chamadas perdidas.</p>
         </div>
         <div>
-          <p><b>2) Link de marcação</b><br/>Página simples para o cliente marcar sem fricção.</p>
+          <p><b>2) Link de marcação</b><br/>Página simples para o cliente marcar sem fricção — 24/7.</p>
         </div>
         <div>
-          <p><b>3) Medição</b><br/>Contamos marcações recuperadas por semana.</p>
+          <p><b>3) Medição semanal</b><br/>Contamos marcações recuperadas por semana. Sem métricas vagas.</p>
         </div>
         <div>
-          <p><b>4) Ajustes</b><br/>Melhoramos script e timings.</p>
+          <p><b>4) Ajustes contínuos</b><br/>Melhoramos scripts e timings com base nos dados reais.</p>
         </div>
       </div>
     </div>
 
+    <!-- Para quem -->
     <div class="card">
-      <h2>Preço</h2>
-      <p class="price">Setup €150–€300</p>
-      <p class="price">Mensal €79–€149</p>
-      <p class="muted">*Preço final depende do volume de chamadas e integração.</p>
+      <h2>Para quem é isto?</h2>
+      <p>Negócios locais que dependem de marcações e perdem chamadas:</p>
+      <div style="margin-top:12px">
+        <span class="badge">🦷 Clínicas dentárias</span>
+        <span class="badge">💈 Barbearias</span>
+        <span class="badge">💅 Estética</span>
+        <span class="badge">🔧 Oficinas</span>
+        <span class="badge">🏥 Clínicas veterinárias</span>
+        <span class="badge">🧹 Limpezas</span>
+      </div>
     </div>
 
+    <!-- Preço -->
+    <div class="card">
+      <h2>Investimento</h2>
+      <div class="grid">
+        <div>
+          <p class="price">Setup €150–€300</p>
+          <p class="muted">Configuração única: scripts, página de marcação, integração.</p>
+        </div>
+        <div>
+          <p class="price">Mensal €79–€149</p>
+          <p class="muted">Gestão do follow‑up + relatório semanal + ajustes.</p>
+        </div>
+      </div>
+      <p style="margin-top:16px;color:#9da0ab;font-size:14px">Preço final depende do volume de chamadas e integrações necessárias. Sem compromisso de permanência.</p>
+    </div>
+
+    <!-- Contacto -->
     <div class="card" id="contacto">
-      <h2>Contacta‑nos</h2>
-      <p>Envia o teu nome + tipo de negócio e enviamos um exemplo.</p>
-      <form action="https://formsubmit.co/callrecovernqw2@dollicons.com" method="POST" style="display:flex;flex-direction:column;gap:12px;max-width:400px">
+      <h2>Fala connosco</h2>
+      <p>Deixa o teu contacto e enviamos um exemplo personalizado para o teu negócio.</p>
+      <form action="https://formsubmit.co/callrecovernqw2@dollicons.com" method="POST" style="display:flex;flex-direction:column;gap:12px;max-width:440px;margin-top:16px">
         <input type="hidden" name="_subject" value="Novo contacto — CallRecover">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://luisftsilva.github.io/callrecover-pt/?obrigado=1">
-        <input type="text" name="name" placeholder="Nome" required style="padding:10px;border-radius:8px;border:1px solid #22232c;background:#0b0b0f;color:#f4f4f7">
-        <input type="email" name="email" placeholder="Email" required style="padding:10px;border-radius:8px;border:1px solid #22232c;background:#0b0b0f;color:#f4f4f7">
-        <input type="text" name="business" placeholder="Tipo de negócio" required style="padding:10px;border-radius:8px;border:1px solid #22232c;background:#0b0b0f;color:#f4f4f7">
-        <button type="submit" class="cta" style="border:none;cursor:pointer;text-align:center">Enviar</button>
+        <input type="hidden" name="_next" value="https://luisftsilva.github.io/callrecover-pt/obrigado.html">
+        <input type="text" name="name" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="business" placeholder="Tipo de negócio (ex: clínica dentária)" required>
+        <input type="tel" name="phone" placeholder="Telefone (opcional)">
+        <button type="submit" class="cta form-btn">Enviar →</button>
       </form>
     </div>
+
+    <!-- Trust -->
+    <div class="trust">
+      <p>Sem spam. Sem compromisso. Respondemos em 24h.</p>
+    </div>
   </div>
+
+  <footer>
+    <p>© 2026 CallRecover · Portugal</p>
+  </footer>
 </body>
 </html>
